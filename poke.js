@@ -21,6 +21,7 @@ search.addEventListener("submit", function(event)  {
         }
 
         const data = await response.json()
+        document.querySelector("#pokInput").value=""
         //console.log(data)
 //
         const dataImage = data.sprites.front_default
