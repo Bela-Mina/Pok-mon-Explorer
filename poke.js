@@ -19,6 +19,7 @@ search.addEventListener("submit", function(event)  {
         if(!response.ok) {
             throw new Error("failed to fetch pokemon")
         }
+
         const data = await response.json()
         //console.log(data)
 //
@@ -28,13 +29,17 @@ search.addEventListener("submit", function(event)  {
 
         Images.src = dataImage
         Images.style.display = "block"
+        const message = document.querySelector("#result");
+
+        message.textContent = "";
     }
     catch(error) {
-        const errors = document.querySelector("#poke-result")
-        errors.innerHTML = "Pokémon not found. Please check the name and try again."
+        
+        const message = document.querySelector("#result")
+        const Images = document.querySelector("#pokImage");
+        Images.style.display = "none"
+
+        message.textContent = "Pokémon not found. Please check the name and try again." 
         //console.log(error)
-    }
 }
-///////////////////
-//////////////////
-////
+ }
