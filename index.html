@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeDex</title>
+    <link rel="stylesheet" href="poke.css">
 </head>
 <body>
-    <header>
-        <img src="" alt="">
-        <div>
-            <h1>PokéDex</h1>
-            <p>YOUR PERSONAL POKÉMON EXPLORER</p>
-        </div>
-        
+    <header class="header">
+        <h1>⚡ PokéDex</h1>
+        <p>YOUR PERSONAL POKÉMON EXPLORER</p>
     </header>
     <main class="container">
-        <h2>Discover Pokémon</h2>
-        <p>search, explore and discover your favorites.</p>
-        <div id="inputs">
-            <label for="searchInput">
-                <input type="text" name="searchInput" id="searchInput">
-                <button>Search Pokemon</button>
-            </label>
-        </div>
+        <section class="search-section">
+            <h2>Discover Pokémon</h2>
+            <p>search, explore and discover your favorites.</p>
+
+            <form id="search-form">
+                <input
+                 type="text"
+                 id="pokInput"
+                 placeholder="Search Pokémon by name..."
+                 required
+                >
+                <button type="submit" onclick="fetchData()">Search Pokémon</button>
+            </form>
+        </section>
+        <section class="result-section">
+            <h2>Featured Pokemon</h2>
+            <div id="poke-result">
+                <p>search for a pokmon to see its details.</p>
+                <img src="" id="pokImage" alt="PokeImages" style="display: none;">
+            </div>
+        </section>
     </main>
+    <script src="poke.js"></script>
 </body>
 </html>
