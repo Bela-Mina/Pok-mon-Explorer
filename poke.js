@@ -14,7 +14,8 @@ search.addEventListener("submit", function(event)  {
         .value
         .trim()
         .toLowerCase()
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokMan}`)
+        //const response = await fetch("https://pokeapi.co/api/v2/pokemon/")
+       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokMan}`)
         if(!response.ok) {
             throw new Error("failed to fetch pokemon")
         }
@@ -29,7 +30,9 @@ search.addEventListener("submit", function(event)  {
         Images.style.display = "block"
     }
     catch(error) {
-        console.log(error)
+        const errors = document.querySelector("#poke-result")
+        errors.innerHTML = "Pokémon not found. Please check the name and try again."
+        //console.log(error)
     }
 }
 ///////////////////
